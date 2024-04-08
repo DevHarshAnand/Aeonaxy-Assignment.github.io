@@ -177,14 +177,19 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-left: 4px;
       }
 
       .dribbble-logo {
         height: 100px;
-        width: 200px;
+        width: 390px;
         display: flex;
         justify-content: center;
         align-items: center;
+        mix-blend-mode:  multiply;
+        margin: 0 auto;
+        margin-top: 39px;
+        object-fit: contain;
       }
 
       .form-container {
@@ -207,7 +212,30 @@
 
       .avatar-image {
         width: 90px;
+        object-fit: contain;
       }
+
+      
+    p {
+      color: rgba(68, 68, 68, 0.944);
+    }
+
+    #set{
+      width: 400px;
+    }
+
+    .dribbble-logo {
+      height: 110px;
+    }
+
+    h1{
+      margin-top: 30px;
+    }
+
+    .form-fields{
+      margin-top: -31px;
+    }
+      
     }
   </style>
 </head>
@@ -216,7 +244,7 @@
   <div class="container">
     <div class="dribbble-logo-container">
       <div class="dribbble-logo">
-        <img src="./image/dev1.jpg" alt="Dribbble Logo" />
+        <img id="set" src="./image/dev1.jpg" alt="Dribbble Logo" />
       </div>
     </div>
     
