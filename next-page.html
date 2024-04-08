@@ -1,350 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <style>
-    * {
-      margin: 0px;
-      padding: 0px;
-     box-sizing: border-box;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
 
-    .wc-question{
-      width: 80%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 740px;
-      background-color: rgb(195, 194, 194);
-    }
-
-    .btn{
-      width: 80%;
-     margin: 0 auto; 
-      background-color:  rgb(195, 194, 194);
-    }
-
-    .middle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 80%;
-      margin: 0 auto;
-      background-color: rgb(195, 194, 194);
-      margin-top: -144px;
-    }
-
-    .options-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 350px;
-      width: 80%;
-      margin: 0 auto;
-    }
-
-    .grey {
-      color: grey;
-    }
-
-    .option input[type="radio"] {
-      margin-right: 10px;
-    
-    }
-
-    .option label {
-      cursor: pointer;
-      height: 100%;
-      background-color: lightgray;
-      background-blend-mode: multiply;
-    }
-
-    
-
-    .option {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      margin-top: 90px;
-      width: 33%;
-      flex-direction: column;
-      height: 100%;
-      background-color: lightgray;
-      border: 2px solid lightgoldenrodyellow;
-    }
-
-    .option img {
-      margin-right: 1rem;
-      object-fit: contain;
-      margin-left: 0.5rem;
-      height: 200px;
-      width: 165px;
-      background-color: lightgray;
-      background-blend-mode: multiply;
-    }
-
-    .d1 {
-      width: 8.5rem;
-    }
-
-    .d2 {
-      width: 8.5rem;
-    }
-
-    .d3 {
-      width: 8.5rem;
-    }
-
-    .finish-button {
-      background-color: rgb(244, 107, 153);
-      color: white;
-      border-radius: 5px;
-      width: fit-content;
-      padding: 5px 50px 5px 50px;
-      margin: 0 auto;
-      display: flex;
-      position: absolute;
-      bottom: 85px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .niche {
-      display: flex;
-      flex-direction: row-reverse;
-      background-color: lightgray;
-      background-blend-mode: multiply;
-    }
-
-    p {
-      margin-top: 10px;
-      margin-bottom: 18px;
-      font-size: 18px;
-      color: rgb(73, 69, 69);
-    }
-
-    @media only screen and (max-width: 900px) {
-
-      e-question {
+      .wc-question {
+        width: 80%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 600px;
-      }
-
-      .middle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 2px;
-      }
-
-      h1{
-        text-align: center;
-        margin-top: -80px;
-      }
-
-      p{
-        text-align: center;
-      }
-
-      .grey{
-        font-size: small;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 740px;
+        background-color: rgb(195, 194, 194);
       }
 
       .btn {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin-top: -25px;
-        width: 38px;
-        background-color: rgba(186, 201, 215, 0.429);
-      }
-
-       .finish-button {
-        bottom: 532px;
-        position: relative;
-        bottom: 18px;
-        left: -17px;
-        transform: none;
-        margin-top: 20px;
-        padding: 3px 14px 3px 14px;
-      }
-
-      .options-container {
-        flex-direction: column;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        height: fit-content;
-      }
-
-      .option {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin: auto;
-        margin-bottom: 40px;
-      }
-
-       .option img {
-        width: 90px;
-        height: auto;
-      }
-
-      .d3{
-        height: 100px;
-        padding-top: 25px;
-      }
-
-    }
-
-    @media only screen and (max-width: 768px) {
-      .dribble-question {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 600px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: rgb(195, 194, 194);
       }
 
       .middle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 2px;
-      }
-
-      h1{
-        text-align: center;
-        margin-top: -80px;
-      }
-
-      p{
-        text-align: center;
-      }
-
-      .grey{
-        font-size: small;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      .btn {
-        display: flex;
-        justify-content: center;
         flex-direction: column;
-        align-items: center;
-        margin-top: -25px;
-        width: 38px;
-        background-color: rgba(186, 201, 215, 0.429);
-      }
-
-       .finish-button {
-
-        position: relative;
-        bottom: 18px;
-        left: -17px;
-        transform: none;
-        margin-top: 20px;
-        padding: 3px 14px 3px 14px;
+        width: 80%;
+        margin: 0 auto;
+        background-color: rgb(195, 194, 194);
+        margin-top: -144px;
       }
 
       .options-container {
-        flex-direction: column;
-        align-items: center;
         display: flex;
-        justify-content: center;
-        height: fit-content;
+        flex-direction: row;
+        align-items: center;
+        height: 350px;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .grey {
+        color: grey;
+      }
+
+      .option input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .option label {
+        cursor: pointer;
+        height: 100%;
+        background-color: lightgray;
+        background-blend-mode: multiply;
       }
 
       .option {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin: auto;
-        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        margin-top: 90px;
+        width: 33%;
+        flex-direction: column;
+        height: 100%;
+        background-color: lightgray;
+        border: 2px solid lightgoldenrodyellow;
       }
 
-       .option img {
-        width: 90px;
-        height: auto;
+      .option img {
+        margin-right: 1rem;
+        object-fit: contain;
+        margin-left: 0.5rem;
+        height: 200px;
+        width: 165px;
+        background-color: lightgray;
+        background-blend-mode: multiply;
       }
 
-      .d3{
-        height: 100px;
-        padding-top: 25px;
+      .d1 {
+        width: 8.5rem;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="wc-question">
-    
-    <div class="middle">
-      <h1>What brings you to WC?</h1>
-      <div class="grey">
-        <p>
-          Select the options that best describe you.Don't worry.you can
-          explore other options later.
-        </p>
-      </div>
-    </div>
-    <div class="options-container">
-      <div class="option">
-        <img class="d3" src="./image/team.png" alt="Teamwork Icon" />
-        <div class="niche">
-          <label for="designer">I'm a designer looking to share my work</label>
-          <input type="radio" id="designer" name="dribble-option" value="designer" />
-        </div>
-      </div>
 
-      <div class="option">
-        <img class="d1" src="./image/dev.png" alt="Developer Icon" />
-        <div class="niche">
-          <label for="hire-designer">I'm looking to hire a designer</label>
-          <input type="radio" id="hire-designer" name="dribble-option" value="hire-designer" />
-        </div>
-      </div>
+      .d2 {
+        width: 8.5rem;
+      }
 
-      <div class="option">
-        <img class="d2" src="./image/designer.png" alt="Designer Icon" />
-        <div class="niche">
-          <label for="design-inspiration">I'm looking for design inspiration</label>
-          <input type="radio" id="design-inspiration" name="dribble-option" value="design-inspiration" />
-        </div>
-      </div>
-      
-    </div>
-    <div class="btn">
-      <button class="finish-button" onclick="checkSelection()">Finish</button>
-    </div>
-  </div>
-  <script>
-    function checkSelection() {
-      var options = document.getElementsByName('dribble-option');
-      for (var i = 0; i < options.length; i++) {
-        if (options[i].checked) {
-          window.location.href = 'final.html';
-          return;
+      .d3 {
+        width: 8.5rem;
+      }
+
+      .finish-button {
+        background-color: rgb(244, 107, 153);
+        color: white;
+        border-radius: 5px;
+        width: fit-content;
+        padding: 5px 50px 5px 50px;
+        margin: 0 auto;
+        display: flex;
+        position: absolute;
+        bottom: 85px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .niche {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: lightgray;
+        background-blend-mode: multiply;
+      }
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 18px;
+        font-size: 18px;
+        color: rgb(73, 69, 69);
+      }
+
+      @media only screen and (max-width: 1400px) {
+        .dribble-question {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 600px;
+        }
+
+        .middle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 2px;
+        }
+
+        h1 {
+          text-align: center;
+          margin-top: -80px;
+        }
+
+        p {
+          text-align: center;
+        }
+
+        .grey {
+          font-size: small;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-top: -25px;
+          width: 38px;
+          background-color: rgba(186, 201, 215, 0.429);
+        }
+
+        .finish-button {
+          bottom: 532px;
+          position: relative;
+          bottom: 18px;
+          left: -17px;
+          transform: none;
+          margin-top: 20px;
+          padding: 3px 14px 3px 14px;
+        }
+
+        .options-container {
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: fit-content;
+        }
+
+        .option {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          margin: auto;
+          margin-bottom: 40px;
+        }
+
+        .option img {
+          width: 90px;
+          height: auto;
+        }
+
+        .d3 {
+          height: 100px;
+          padding-top: 25px;
         }
       }
-      alert('Please select an option before proceeding.');
-    }
-  </script>
-</body>
+
+      @media only screen and (max-width: 900px) {
+        e-question {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 600px;
+        }
+
+        .middle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 2px;
+        }
+
+        h1 {
+          text-align: center;
+          margin-top: -80px;
+        }
+
+        p {
+          text-align: center;
+        }
+
+        .grey {
+          font-size: small;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-top: -25px;
+          width: 38px;
+          background-color: rgba(186, 201, 215, 0.429);
+        }
+
+        .finish-button {
+          bottom: 532px;
+          position: relative;
+          bottom: 18px;
+          left: -17px;
+          transform: none;
+          margin-top: 20px;
+          padding: 3px 14px 3px 14px;
+        }
+
+        .options-container {
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: fit-content;
+        }
+
+        .option {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          margin: auto;
+          margin-bottom: 40px;
+        }
+
+        .option img {
+          width: 90px;
+          height: auto;
+        }
+
+        .d3 {
+          height: 100px;
+          padding-top: 25px;
+        }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .dribble-question {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 600px;
+        }
+
+        .middle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 2px;
+        }
+
+        h1 {
+          text-align: center;
+          margin-top: -80px;
+        }
+
+        p {
+          text-align: center;
+        }
+
+        .grey {
+          font-size: small;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          margin-top: -25px;
+          width: 38px;
+          background-color: rgba(186, 201, 215, 0.429);
+        }
+
+        .finish-button {
+          position: relative;
+          bottom: 18px;
+          left: -17px;
+          transform: none;
+          margin-top: 20px;
+          padding: 3px 14px 3px 14px;
+        }
+
+        .options-container {
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          height: fit-content;
+        }
+
+        .option {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          margin: auto;
+          margin-bottom: 40px;
+        }
+
+        .option img {
+          width: 90px;
+          height: auto;
+        }
+
+        .d3 {
+          height: 100px;
+          padding-top: 25px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wc-question">
+      <div class="middle">
+        <h1>What brings you to WC?</h1>
+        <div class="grey">
+          <p>
+            Select the options that best describe you.Don't worry.you can
+            explore other options later.
+          </p>
+        </div>
+      </div>
+      <div class="options-container">
+        <div class="option">
+          <img class="d3" src="./image/team.png" alt="Teamwork Icon" />
+          <div class="niche">
+            <label for="designer"
+              >I'm a designer looking to share my work</label
+            >
+            <input
+              type="radio"
+              id="designer"
+              name="dribble-option"
+              value="designer"
+            />
+          </div>
+        </div>
+
+        <div class="option">
+          <img class="d1" src="./image/dev.png" alt="Developer Icon" />
+          <div class="niche">
+            <label for="hire-designer">I'm looking to hire a designer</label>
+            <input
+              type="radio"
+              id="hire-designer"
+              name="dribble-option"
+              value="hire-designer"
+            />
+          </div>
+        </div>
+
+        <div class="option">
+          <img class="d2" src="./image/designer.png" alt="Designer Icon" />
+          <div class="niche">
+            <label for="design-inspiration"
+              >I'm looking for design inspiration</label
+            >
+            <input
+              type="radio"
+              id="design-inspiration"
+              name="dribble-option"
+              value="design-inspiration"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <button class="finish-button" onclick="checkSelection()">Finish</button>
+      </div>
+    </div>
+    <script>
+      function checkSelection() {
+        var options = document.getElementsByName("dribble-option");
+        for (var i = 0; i < options.length; i++) {
+          if (options[i].checked) {
+            window.location.href = "final.html";
+            return;
+          }
+        }
+        alert("Please select an option before proceeding.");
+      }
+    </script>
+  </body>
 </html>
