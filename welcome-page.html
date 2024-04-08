@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f2f2f2f4;
+    }
+
+    .container {
+      display: flex;
+      width: 80%;
+      max-width: 1200px;
+      height: 712px;
+      background-color: #9b92927a;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    
+    .form-container {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      padding-left: 0px;
+    }
+
+    .dribbble-logo-container {
+      width: 50%;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 948px;
+      margin-left: -70px;
+    }
+
+
+   
+    .dribbble-logo {
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dribbble-logo img {
+      width: 150%;
+      height: 150%;
+      background-size: contain;
+      filter: brightness(63%);
+      padding-left: 0px;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-fields {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .form-group {
+      padding: 10px 10px 10px 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .next-button {
+      background-color: rgb(244, 107, 153);
+      color: white;
+      border-radius: 5px;
+      width: fit-content;
+      padding: 5px 50px 5px 50px;
+      margin: 10px auto;
+    }
+
+    .avatar-container {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .avatar-image {
+      width: 115px;
+      height: 115px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .camera-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    #location {
+      border: none;
+      margin-top: 15px;
+      background-color: transparent;
+      border-bottom: 1px solid rgb(136, 153, 169);
+      width: 100%;
+    }
+
+    p {
+      color: gray;
+    }
+
+    input::placeholder {
+      color: gray;
+    }
+
+    #move {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: small;
+      margin-top: 26px;
+    }
+
+    #avatar {
+      margin-left: 80px;
+      margin-top: 15px;
+    }
+
+    .form-group1 {
+      display: flex;
+      flex-direction: column;
+      width: 67%;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dribbble-logo-container,
+      .form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .dribbble-logo {
+        height: 100px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-container {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .form-group {
+        margin-top: 5px;
+      }
+
+      .avatar-container {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .avatar-image {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="dribbble-logo-container">
+      <div class="dribbble-logo">
+        <img src="image/dev1.jpg" alt="Dribbble Logo" />
+      </div>
+    </div>
+    
+    <div class="form-container">
+       <div class="form-header">
+        <h1>Welcome! Let's create your profile</h1>
+        <p>Let others get to know you better! You can do these later</p>
+      </div>
+    
+
+      <div class="form-fields">
+        <div class="form-group">
+          <b><label for="avatar">Add an avatar</label><br /></b>
+          <div class="avatar-container">
+            <img class="avatar-image" src="/image/dev2.jpg" alt="User avatar" id="avatar-image" />
+          </div>
+          <input type="file" id="avatar" name="avatar" onchange="handleFileSelect()" />
+          <p id="move">&gt; Or choose one of our defaults</p>
+        </div>
+      </div>
+      
+      
+      <div class="form-group1">
+        <b><label for="location" class="move2">Add your location</label><br /></b>
+        <input type="text" id="location" name="location" placeholder="Enter your location" />
+      </div>
+      
+      <div class="form-group">
+        <button class="next-button">Next</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const avatarInput = document.querySelector('#avatar');
+    const avatarContainer = document.querySelector('.avatar-container');
+    
+    
+    avatarInput.addEventListener('change', () => {
+      const file = avatarInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = (event) => {
+        avatarContainer.querySelector('.avatar-image').src = event.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+
+
+    const nextButton = document.querySelector('.next-button');
+    nextButton.addEventListener('click', () => {
+      if (validateForm()) {
+        window.location.href = 'next-page.html';
+      }
+    });
+
+
+    function validateForm() {
+      const avatarInput = document.querySelector('#avatar');
+      const locationInput = document.querySelector('#location');
+      
+      // Check if avatar is selected
+      if (!avatarInput.files.length) {
+        alert('Please select an avatar');
+        return false;
+      }
+
+      // Check if location is entered
+      if (!locationInput.value.trim()) {
+        alert('Please enter your location');
+        return false;
+      }
+
+      // If all fields are filled out, return true
+      return true;
+    } 
+  </script>
+</body>
+
+</html>

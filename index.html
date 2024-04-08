@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dribbble Sign Up</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      width: 80%;
+      max-width: 1200px;
+      height: 712px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .dribbble-logo-container {
+      width: 50%;
+      padding: 0px;
+    }
+
+    .dribbble-logo {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container>h1 {
+      margin-top: 20px;
+    }
+
+    .dribbble-logo img {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+    }
+
+    .form-container {
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      background-color: gainsboro;
+    }
+
+    .sign-up-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .form-group {
+      padding: 10px 10px 10px 10px;
+      width: 100%;
+    }
+
+    .create-account-button {
+      background-color: rgb(244, 107, 153);
+      color: white;
+      border-radius: 5px;
+      width: fit-content;
+      padding: 5px 50px 5px 50px;
+      margin: auto;
+    }
+
+    .gray-text {
+      color: rgb(112, 106, 106);
+      font-size: 14px;
+    }
+
+    .recaptcha-text {
+      color: rgb(112, 106, 106);
+      font-size: 12px;
+      margin-left: 25px;
+    }
+
+    .already-member {
+      margin: 40px 40px 40px 40px;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 4px;
+      background-color: rgb(237, 233, 233);
+      padding: 4px;
+    }
+
+    #notification-settings {
+      max-width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 80%;
+        max-width: 1200px;
+        height: 710px;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          height: auto;
+        }
+
+        .form-container {
+          padding: 20px;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="dribbble-logo-container">
+      <div class="dribbble-logo">
+        <img src="image/FIRST.jpg" alt="Dribbble Logo">
+      </div>
+    </div>
+    <div class="form-container">
+      <h1>Sign up for WC</h1>
+      <form class="sign-up-form" id="sign-up-form">
+        <div class="form-group">
+          <b><label for="username">Username</label><br /></b>
+          <input type="text" id="username" value="" required>
+        </div>
+        <div class="form-group">
+          <b><label for="email">Email</label><br /></b>
+          <input type="email" id="email" value="" required>
+        </div>
+        <div class="form-group">
+          <b><label for="password">Password</label><br /></b>
+          <input type="password" id="password" value="" minlength="8" required>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="notification-settings" required>
+          <label for="notification-settings" class="gray-text">
+            Creating an account means you're okay with our
+            <a href="terms-of-service.html" target="_blank">Terms of Service</a>,
+            <a href="privacy-policy.html" target="_blank">Privacy Policy</a>,
+            and our default
+            <a href="notification-settings.html" target="_blank">Notification Settings</a>.
+          </label>
+        </div>
+        <button type="submit" class="create-account-button">Create Account</button>
+      </form>
+      <div class="recaptcha-container">
+        <div class="recaptcha-text">
+          This site is protected by reCAPTCHA and the
+          <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and
+          <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+        </div>
+        <div class="recaptcha-image"></div>
+      </div>
+      <div class="already-member">
+        Already a member? <a href="/welcome-page.html">Sign In</a>
+      </div>
+    </div>
+    <script>
+
+      // Function to validate the username
+      function validateUsername(username) {
+        return /^[a-zA-Z0-9_]{3,16}$/.test(username);
+      }
+
+      // Function to validate the password
+      function validatePassword(password) {
+        return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
+      }
+
+      // Function to validate the email
+      function validateEmail(email) {
+        return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email);
+      }
+
+      const form = document.getElementById('sign-up-form');
+
+      form.addEventListener('submit', function (event) {
+        // Prevent the form from submitting in the normal way
+        event.preventDefault();
+
+        // Perform form validation
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const notificationSettings = document.getElementById('notification-settings').checked;
+
+        let isFormValid = true;
+
+        // Validate the username field
+        if (!validateUsername(username)) {
+          isFormValid = false;
+          alert('Please enter a valid username. It must be between 3 and 16 characters long, and can only contain letters, numbers, and underscores.');
+        }
+
+        // Validate the password field
+        if (!validatePassword(password)) {
+          isFormValid = false;
+          alert('Please enter a valid password. It must be at least 8 characters long, and contain at least one lowercase letter, one uppercase letter, and one number.');
+        }
+
+        // Validate the email field
+        if (!validateEmail(email)) {
+          isFormValid = false;
+          alert('Please enter a valid email address.');
+        }
+
+        // Validate the notification settings field
+        if (!notificationSettings) {
+          isFormValid = false;
+          alert('Please indicate your notification settings.');
+        }
+
+        // If the form is valid, navigate to the welcome-page.html file
+        if (isFormValid) {
+          window.location.href = 'welcome-page.html';
+        }
+      });
+
+    </script>
+</body>
+
+</html>
