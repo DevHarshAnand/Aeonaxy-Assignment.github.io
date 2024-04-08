@@ -399,8 +399,8 @@
 
       h1 {
         font-size: 1.3rem;
-        margin-left: 9px;
-        margin-bottom: -18px;
+        margin-left: -4px;
+        margin-bottom: 1px;
       }
 
       .navbar-right>div {
@@ -412,7 +412,7 @@
 
       .navbar-left a {
         padding: 1px 4px 1px 4px;
-        margin: 2px 2px 2px 8px;
+        margin: 2px 2px 2px 4px;
         text-decoration: none;
         color: rgb(55, 58, 58);
         font-weight: bold;
@@ -450,6 +450,9 @@
       .footer-container {
         flex-direction: column;
         background-color: rgb(168, 167, 166);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .wc-contaier,
@@ -492,6 +495,10 @@
       .btn {
         margin-left: 21px;
         cursor: pointer;
+      }
+
+      #lefty{
+        margin-left: -30px;
       }
     }
   </style>
@@ -539,7 +546,7 @@
     <div class="special">
       <div class="footer-container">
         <div class="wc-contaier">
-          <span>WC's</span>
+          <span id="lefty">WC's</span>
           <p id="unique">WC is the world's leading community for creatives to share, grow and get hired.</p>
           <div class="social-icons">
             <a href="#" class="fa fa-facebook"></a>
