@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -212,7 +211,6 @@
     }
   </style>
 </head>
-
 <body>
   
   <div class="container">
@@ -279,20 +277,18 @@
       const avatarInput = document.querySelector('#avatar');
       const locationInput = document.querySelector('#location');
       
-      // Check if avatar is selected
+      
       if (!avatarInput.files.length) {
         alert('Please select an avatar');
         return false;
       }
 
-      // Check if location is entered
+      
       if (!locationInput.value.trim()) {
         alert('Please enter your location');
         return false;
       }
-
-      // If all fields are filled out, return true
-      return true;
+        return true;
     } 
   </script>
 </body>

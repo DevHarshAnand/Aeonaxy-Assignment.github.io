@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,7 +126,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <div class="dribbble-logo-container">
@@ -176,17 +174,16 @@
     </div>
     <script>
 
-      // Function to validate the username
       function validateUsername(username) {
         return /^[a-zA-Z0-9_]{3,16}$/.test(username);
       }
 
-      // Function to validate the password
+      
       function validatePassword(password) {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
       }
 
-      // Function to validate the email
+      
       function validateEmail(email) {
         return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(email);
       }
@@ -194,10 +191,10 @@
       const form = document.getElementById('sign-up-form');
 
       form.addEventListener('submit', function (event) {
-        // Prevent the form from submitting in the normal way
+    
         event.preventDefault();
 
-        // Perform form validation
+        
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         const email = document.getElementById('email').value;
@@ -205,31 +202,31 @@
 
         let isFormValid = true;
 
-        // Validate the username field
+        
         if (!validateUsername(username)) {
           isFormValid = false;
           alert('Please enter a valid username. It must be between 3 and 16 characters long, and can only contain letters, numbers, and underscores.');
         }
 
-        // Validate the password field
+        
         if (!validatePassword(password)) {
           isFormValid = false;
           alert('Please enter a valid password. It must be at least 8 characters long, and contain at least one lowercase letter, one uppercase letter, and one number.');
         }
 
-        // Validate the email field
+  
         if (!validateEmail(email)) {
           isFormValid = false;
           alert('Please enter a valid email address.');
         }
 
-        // Validate the notification settings field
+        
         if (!notificationSettings) {
           isFormValid = false;
           alert('Please indicate your notification settings.');
         }
 
-        // If the form is valid, navigate to the welcome-page.html file
+        
         if (isFormValid) {
           window.location.href = 'welcome-page.html';
         }
@@ -237,5 +234,4 @@
 
     </script>
 </body>
-
 </html>
